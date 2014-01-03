@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+<head>
+<title>Generate your own PRIVATE Facebook Status Review of the Year</title>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12127318-18']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+<script>
+var year = 2013;
+
+/*
+** Utility methods and vars
+*/
+var maMonths = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
+
+//This list was taken from http://tagcrowd.com/languages/English
+var wcIgnoreDictionary = [ 
+"january", "february", "march", "april", "may", "june", "july", "august","september", "october", "november", "december", "monday","tuesday", "wednesday", "thursday", "friday", "saturday", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n","o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "-","--", "''", "we've", "we'll", "we're", "who'll", "who've", "who's", "you'll", "you've", "you're", "i'll", "i've", "i'm", "i'd","he'll", "he'd", "he's", "she'll", "she'd", "she's", "it'll","it'd", "it's", "they've", "they're", "they'll", "didn't","don't", "can't", "won't", "isn't", "wasn't", "couldn't","should't", "wouldn't", "ve", "ll", "re", "th", "rd", "st", "doing", "allow", "examining", "using", "during", 
+"within","across", "among", "whether", "especially", "without","actually", "another", "am", "because", "cannot", "the", "of", "to", "and", "a", "in", "is", "it", "you", "that", "he", "was","for", "on", "are", "with", "as", "I", "his", "they", "be", "at", "one", "have", "this", "from", "or", "had", "by", "hot", "word", "but", "what", "some", "we", "yet", "can", "out", "other","were", "all", "there", "when", "up", "use", "your", "how","said", "an", "each", "she", "which", "do", "their", "time", "if", "will", "shall", "way", "about", "many", "then", "them", "would", "like", "so", "these", "her", "long", "make", "thing", "see", "him", "two", "has", "look", "more", "day", "could", "go", 
+"come", "did", "no", "yes", "most", "my", "over", "know", "than", "call", "first", "who", "may", "down", "side", "been", "now", "find","any", "new", "part", "take", "get", "place", "made", "where","after", "back", "little", "only", "came", "show", "every","good", "me", "our", "under", "upon", "very", "through", "just", "great", "say", "low", "cause", "much", "mean", "before", "move", "right", "too", "same", "tell", "does", "set", "three", "want", "well", "also", "put", "here", "must", "big", "high", "such","why", "ask", "men", "went", "kind", "need", "try",
+"again", "near", "should", "still", "between", "never", "last", "let", "though", "might", "saw", "left", "late", "run", "don't", "while", "close", "few", "seem", "next", "got", "always", "those","both", "often", "thus", "won't", "not", "into", "inside", "its", "makes", "tenth", "trying", "i", "me", "my", "myself", "we", "us", "our", "ours", "ourselves", "you", "your", "yours", "yourself","yourselves", "he", "him", "his", "himself", "she", "her","hers", "herself", "it", "its", "itself", "they", "them", "their", "theirs", "themselves", "what", "which", "who", "whom", "this", "that", "these", "those", "am", "is", "are", "was", "were",
+"be", "been", "being", "have", "has", "had", "having", "do", "does","did", "doing", "will", "would", "shall", "should", "can","could", "may", "might", "must", "ought", "i'm", "you're", "he's", "she's", "it's", "we're", "they're", "i've", "you've", "we've", "they've", "i'd", "you'd", "he'd", "she'd", "we'd", "they'd", "i'll", "you'll", "he'll", "she'll", "we'll", "they'll","isn't", "aren't", "wasn't", "weren't", "hasn't", "haven't", "hadn't", "doesn't", "don't", "didn't", "won't", "wouldn't", "shan't", "shouldn't", "can't", "cannot", "couldn't","mustn't", "let's", "that's", "who's", "what's", "here's","there's", "when's", "where's", "why's", "how's", 
+"daren't","needn't", "oughtn't", "mightn't", "a", "an", "the", "and","but", "if", "or", "because", "as", "until", "while", "of", "at", "by", "for", "with", "about", "against", "between", "into","through", "during", "before", "after", "above", "below", "to", "from", "up", "down", "in", "out", "on", "off", "over", "under", "again", "further", "then", "once", "here", "there", "when","where", "why", "how", "all", "any", "both", "each", "few","more", "most", "other", "some", "such", "no", "nor", "not",
+"only", "own", "same", "so", "than", "too", "very", "one", "every","least", "less", "many", "now", "ever", "never", "say", "says", "said", "also", "get", "go", "goes", "just", "made", "make","put", "see", "seen", "whether", "like", "well", "back", "even", "still", "way", "take", "since", "another", "however", "two","three", "four", "five", "first", "second", "new", "old", "high", "long",
+// These additions are percularly to me
+"...", "http", "quot" , ":)", ":("
+];
+
+function padl(str,length) {
+	if (str.length >= length) {
+		return str;
+	}
+	return str + Array(length-(''+str).length).join(' ');
+}
+
+function padr(str,length) {
+	if (str.length >= length) {
+		return str;
+	}
+	return Array(length-(''+str).length).join(' ') + str;
+}
+
+/*
+** Monthly post counts
+*/
+function processMonthlyActivity() {
+	this.state = [];
+	for(var i=0;i<12;++i) {
+		this.state[i] = 0;
+	}
+}
+
+processMonthlyActivity.prototype.process = function(theDate, theStatus) {
+    for(var i in maMonths) {
+        if (theDate.indexOf(maMonths[i]) != -1) {
+            ++this.state[i];
+        }
+    }
+    return "";
+}
+
+processMonthlyActivity.prototype.collate = function(theDate, theStatus) {
+	var r = '';
+	var mostPosts = 1;
+	for (var i in this.state) {
+		mostPosts = Math.max(mostPosts, this.state[i]);
+	}
+
+	var longestBar = 50;
+	for (var i in this.state) {
+		var barLength = Math.floor((this.state[i] * longestBar) / mostPosts);
+		r += padl(maMonths[i],15) + ' : ' + padr(this.state[i],4) + ' : ' + Array(barLength+1).join('*') + '\n';
+	}
+	return r;
+}
+
+
+/*
+** Word cloud (of sorts)
+*/
+function processWordCloud() {
+	this.state = [];
+}
+
+processWordCloud.prototype.process = function(theDate, theStatus) {
+	var words = theStatus.split(/\b/g);
+	for (var i in words) {
+		var w = words[i].replace(/(^\s+|\s+$)/g, '');
+		if (w.length < 4) {
+			continue;
+		}
+		if (wcIgnoreDictionary.indexOf(w) != -1) {
+			continue;
+		}
+
+		if (undefined == this.state[w]) {
+			this.state[w] = { word: w, count: 1 };
+		} else {
+			++this.state[w].count;
+		}
+	}
+	return "";
+}
+
+processWordCloud.prototype.collate = function() {
+
+	var mostWords = 1;
+	var list = [];
+	for (var i in this.state) {
+		list.push(this.state[i]);
+		mostWords = Math.max(mostWords, this.state[i].count);
+	}
+
+	// convert the object to array, since the sort is easier (I think!)
+	list.sort(function(a,b) {
+		return b.count - a.count;
+	});
+
+	var r = "";
+	var longestBar = 50;
+	for (var i in list) {
+		var wo = list[i];
+		var barLength = Math.floor((wo.count * longestBar) / mostWords);
+		r += padl(wo.word,15) + ' : ' + padr(wo.count,5) + ' : ' + Array(barLength+1).join('*') + '\n';
+	}
+	return r;
+}
+
+
+/*
+** A standard list of every post over the year (as defined by the global 'year')
+*/
+function processStatusList() {
+}
+
+processStatusList.prototype.process = function(theDate, theStatus) {
+	// This is not how to parse out the date, but Date.parse is platform independent so I 
+	// daren't use it.
+	if (theDate.match(year)) {
+		var re = new RegExp('(.*)\\s' + year);
+		var dateParts = theDate.match(re);
+		return dateParts[1] + " : " + theStatus + "\n\n";
+	}
+	return "";
+}
+
+processStatusList.prototype.collate = function(theDate, theStatus) {
+	return "";
+}
+
+
+/*
+** Root processing code - calls out the specific-class for processing
+*/
+function process(srcDiv, destDiv, processMethod) {
+	var oTextarea = document.getElementById(srcDiv);
+	var text = oTextarea.value;
+
+	var pattern = 'class="meta">(.*?)<.*?class="comment">(.*?)<';
+	var re = new RegExp(pattern, 'g');
+	var rr = new RegExp(pattern);
+
+	var reResults = text.match(re);
+
+	var result = "";
+	var handler = new processMethod();
+	for(var i in reResults) {
+		var line = reResults[i];
+		var parts = line.match(rr);
+
+		result += handler.process(parts[1], parts[2]);
+	}
+
+	result += handler.collate();
+
+
+	var oOutputarea = document.getElementById(destDiv);
+	oOutputarea.innerHTML = result;
+}
+
+</script>
+</head>
+<body>
+<h1>Generate your own PRIVATE Facebook Status Review of the Year</h1>
+
+<p>
+At this time of year, every seems to post status updates that condense their year of posts into a single line, or graphic. Unfortunately, every one that does it uses a Facebook app which (usually) makes a copy of all their (and sometimes your!) accessible data! 
+</p>
+<p>
+Since I don't want to give me data to these people... but I'm still curious about my year... I wrote this page to do a similar job. And it doesn't steal anything!</p>
+<p>
+The process is:
+<ol>
+<li>Go to your <a href='https://www.facebook.com/settings' target='new'>Facebook settings</a> page</li>
+<li>Click on the 'Download a copy' link</li>
+<li>Wait for the archive to be built, and extract its contents</li>
+<li>Open the file html/wall.htm into a text editor, and copy+paste the contents into the box below</li>
+<li>Click on one of the processing links below. The Javascript on the page will process your update locally on your machine, so no data appears anywhere else!</li>
+</ol>
+<p>
+Disclaimer: I wrote this for myself. It works on my timeline, in English. I haven't checked anything else. Also, the code is a hack and might not be updated with anyone's suggestioned - but I'm always happy to receive them at marquisdegeek@gmail dt com.
+</p>
+<textarea id="input"  rows="5" cols="80">
+</textarea>
+<p>
+<a href="#" onclick="process('input', 'output', processStatusList);return false;">Show me the year</a>
+<a href="#" onclick="process('input', 'output', processMonthlyActivity);return false;">Monthly activity</a>
+<a href="#" onclick="process('input', 'output', processWordCloud);return false;">Word Frequency</a>
+
+</p>
+
+Your year:
+<p>
+<textarea id="output"  rows="25" cols="80">
+</textarea>
+<div id="outputDiv">
+</div>
+
+</p>
+</body>
+</html>
+
